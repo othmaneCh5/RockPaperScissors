@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="rockpaperscissors.js"></script>
+    <script src="rockpaperscissors.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    
+<body> 
+<div id="but">
+<button id="scissors" onclick="scissors();"><img class="lu"  src="scissors.png"></button>
+<button id="rock" onclick="rock();"><img class="lu"  src="fist.png"></button>
+<button id="paper" onclick="paper();"><img class="lu"  src="hand-paper.png"></button>
+</div>
+<div id="cont"></div>
+
 </body>
 </html>

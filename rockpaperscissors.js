@@ -1,58 +1,95 @@
+//declaration of the result
+let container=document.querySelector('#cont');
+let result=document.createElement('h3');
 
-let i=0;
-function generatenumber(min,max){
-    return Math.floor(Math.random()*(max-min+1)+min)
+//declaring list of computer choices
+let list=['rock','paper','scissors'];
+let userchoice;
+//function of computer's choice
+
+
+
+//events
+function scissors(){
+    let index=Math.round(Math.random()*3);
+    let computerchoice=list[index];
+
+    if(computerchoice==='rock'){
+        result.textContent='computer wins this round';
+        container.appendChild(result);
+    }
+    else if(computerchoice==='scissors'){
+        result.textContent='tie';
+        container.appendChild(result);
+    }
+    else{
+        result.textContent='you win this round';
+        container.appendChild(result);
+    }
+    
 }
-let usercount=0;
-let computercount=0;
- let r;
- r=prompt("how many rounds do you want to play ?");
- if(isNaN(r)){
-       r=prompt("invalid input enter a number: ");
- }
-    while(i<r){
-        let x=generatenumber(1,3);
-        let UserChoice=prompt("enter your choice");
-        i++
-        if (UserChoice.toLocaleLowerCase()==="rock" && x===2){
-            console.log("you win this round")
-            usercount++
-        }
-        else if(UserChoice.toLocaleLowerCase()==="paper" &&x===1){
-            console.log("computer wins this round")
-            computercount++
-        }
-        else if(UserChoice.toLocaleLowerCase()==="scissors" && x===2){
-            console.log("you win this round")
-            usercount++
-        }
-        else if(x===3 && UserChoice.toLocaleLowerCase()==="paper"){
-            console.log("you win this round")
-            usercount++
-        }
-        else if(x===1 && UserChoice.toLocaleLowerCase()==="scissors"){
-            console.log("computer wins this round")
-            computercount++
-        }
-        else if(UserChoice.toLocaleLowerCase()==="rock" && x===3){
-            console.log("computer wins this round")
-            computercount++
-        }
-        else{
-            r++
-            console.log("invalid input")
-        }
-     }  
-if(usercount>computercount){
-            console.log("you win by "+usercount+" over "+computercount)
-        }
-else if(computercount>usercount){
+function rock(){
+    let index=Math.round(Math.random()*3);
+    let computerchoice=list[index];
 
-    console.log("computer wins by "+computercount+" over "+usercount)
+    if(computerchoice==='scissors'){
+        result.textContent='you win this round';
+        container.appendChild(result);
+    }
+    else if(computerchoice==='rock'){
+        result.textContent='tie';
+        container.appendChild(result);
+    }
+    else{
+        result.textContent='computer wins this round';
+        container.appendChild(result);
+    }
 }
-else{
-    console.log("it's a tie "+usercount+"/"+computercount)
+function paper(){
+    let index=Math.round(Math.random()*3);
+    let computerchoice=list[index];
+
+    if(computerchoice==='scissors'){
+        result.textContent='computer wins this round';
+        container.appendChild(result);
+    }
+    else if(computerchoice==='paper'){
+        result.textContent='tie';
+        container.appendChild(result);
+    }
+    else{
+        result.textContent='you win this round';
+        container.appendChild(result);
+    }
 }
- 
+/*play_round function
+function play_round(computerchoice,userchoice){
+    if(computerchoice==='rock' && userchoice==='paper'){
+        result.textContent='you win this round';
+        container.appendChild(result);
+    }
+    else if(computerchoice==='paper' && userchoice==='rock'){
+        result.textContent='computer wins this round';
+        container.appendChild(result);
+    }
+    else if(computerchoice==='rock' && userchoice==='scissors'){
+        result.textContent='computer wins this round';
+        container.appendChild(result);
+    }
+    else if(computerchoice==='scissors' && userchoice==='rock'){
+        result.textContent='you win this round';
+        container.appendChild(result);
+    }
+    else if(computerchoice==='scissors' && userchoice==='paper'){
+        result.textContent='computer wins this round';
+        container.appendChild(result);
+    }
+    else if(computerchoice==='scissors' && userchoice==='paper'){
+        result.textContent='you win this round';
+        container.appendChild(result);
+    }
+}
+play_round(computerchoose,userchoice);
+*/
 
-
+    
